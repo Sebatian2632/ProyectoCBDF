@@ -6,8 +6,11 @@ import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-proveedores',
-  styleUrls: ['./proveedores.component.css'],
+  standalone: true,
+  imports: [FormsModule, CommonModule, HttpClientModule],
+  providers:[CategoriasService],
   templateUrl: './proveedores.component.html',
+  styleUrl: './proveedores.component.css'
 })
 
 export class ProveedoresComponent {
