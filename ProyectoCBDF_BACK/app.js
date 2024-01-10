@@ -9,7 +9,7 @@ app.use(cors());
 
 // Configuración del servidor
 app.use(express.json());
-app.use('/socios/v1/proveedores', routesProveedores);
+app.use('/socios/v1/transacciones', routesProveedores);
 
 // Ejecutar el servidor
 app.listen(puerto, () => {
