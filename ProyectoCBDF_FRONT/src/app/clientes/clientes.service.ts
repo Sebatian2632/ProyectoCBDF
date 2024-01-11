@@ -33,6 +33,6 @@ export class ClientesService {
   }
   //DELETE
   deleteCliente(id:number):Observable<Respuesta>{
-    return this.http.get<Respuesta>(this.urlAPI);
+    return this.http.delete<Respuesta>(this.urlAPI+'/'+id);
   }
 }

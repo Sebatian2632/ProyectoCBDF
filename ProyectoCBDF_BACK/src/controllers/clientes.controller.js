@@ -56,7 +56,8 @@ exports.crearCliente = async(req,res) => {
         if(nombre == undefined || direccion == undefined || contacto == undefined){
             res.status(400).json({
                 estado : 0,
-                mensaje: "Bad Request - Faltan parametros"
+                mensaje: "Bad Request - Faltan parametros",
+                cliente : []
             })
         } else {
             const clienteC = await Cliente.create({
@@ -73,7 +74,8 @@ exports.crearCliente = async(req,res) => {
     } catch (error) {
         res.status(500).json({
             estado : 0,
-            mensaje: "Ocurrió un error desconocido"
+            mensaje: "Ocurrió un error desconocido",
+            cliente : []
         })
     }
 }
@@ -117,19 +119,22 @@ exports.eliminarCliente = async(req,res) => {
         if (cliente == null) {
             res.status(404).json({
                 estado: 0,
-                mensaje: "Cliente no encontrado"
+                mensaje: "Cliente no encontrado",
+                cliente:[]
             })
         } else {
             await cliente.destroy()
             res.status(200).json({
                 estado : 1,
-                mensaje: "Cliente eliminado"
+                mensaje: "Cliente eliminado",
+                cliente:[]
             })
         }
     } catch (error) {
         res.status(500).json({
             estado : 0,
-            mensaje: "Ocurrió un error desconocido"
+            mensaje: "Ocurrió un error desconocido",
+            cliente:[]
         })
     }
 }

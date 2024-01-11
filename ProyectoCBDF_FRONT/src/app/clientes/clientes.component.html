@@ -150,7 +150,7 @@
                           <td>{{ cliente.contacto }}</td>
                           <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditarCliente">Editar</button>&nbsp;
-                            <button type="button" class="btn btn-danger" >Eliminar</button>
+                            <button type="button" class="btn btn-danger" (click)="eliminarCliente(cliente.id);">Eliminar</button>
                           </td>
                         </tr>
                       </tbody>
@@ -199,24 +199,24 @@
         </button>
       </div>
       <div class="modal-body">
-        <form>
+        <form #formularioCliente="ngForm">
           <div class="form-group">
             <label for="nombre">Nombre:</label>
-            <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre" required>
+            <input type="text" class="form-control" id="nombre" placeholder="Ingrese el nombre" required [(ngModel)]="cliente.nombre" name="nombre">
           </div>
           <div class="form-group">
             <label for="direccion">Dirección:</label>
-            <input type="text" class="form-control" id="direccion" placeholder="Ingrese la dirección" required>
+            <input type="text" class="form-control" id="direccion" placeholder="Ingrese la dirección" required [(ngModel)]="cliente.direccion" name="direccion">
           </div>
           <div class="form-group">
             <label for="contacto">Contacto:</label>
-            <input type="text" class="form-control" id="contacto" placeholder="Ingrese el contacto" required>
+            <input type="text" class="form-control" id="contacto" placeholder="Ingrese el contacto" required [(ngModel)]="cliente.contacto" name="contacto">
           </div>
-        </form>
+        </form>        
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-success">Registrar</button>
+        <button type="button" class="btn btn-success" (click)="agregarCliente(formularioCliente)">Registrar</button>
       </div>
     </div>
   </div>
