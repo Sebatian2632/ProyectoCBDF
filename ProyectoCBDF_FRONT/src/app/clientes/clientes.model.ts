@@ -1,11 +1,12 @@
-export interface Categoria{
+export interface Cliente{
   id:number,
   nombre:string,
-  descripcion:string,
+  direccion:string,
+  contacto:string
 }
 
 export interface Respuesta{
   estado:number,
   mensaje:string,
-  categorias:Categoria[]
+  clientes:Cliente[]
 }

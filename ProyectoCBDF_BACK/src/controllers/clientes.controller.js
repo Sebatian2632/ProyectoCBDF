@@ -13,13 +13,15 @@ exports.obtenerTodosClientes = async(req,res) => {
         } else {
             res.status(404).json({
                 estado: 0,
-                mensaje: "No se encontraron clientes"
+                mensaje: "No se encontraron clientes",
+                clientes: []
             })
         }
     } catch (error) {
         res.status(500).json({
             estado : 0,
-            mensaje: "Ocurrió un error desconocido"
+            mensaje: "Ocurrió un error desconocido",
+            clientes: []
         });
     }
 }

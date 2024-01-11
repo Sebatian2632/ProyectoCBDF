@@ -8,31 +8,31 @@ import { Respuesta } from './clientes.model';
 })
 
 export class ClientesService {
-  private urlAPI = "http://localhost:3000/socios/v2/clientes";
+  private urlAPI = "http://localhost:3000/socios/v1/clientes";
 
   constructor(private http:HttpClient) { }
 
   //Metodos
   //GET
-  getAllCategorias():Observable<Respuesta>{
+  getAllClientes():Observable<Respuesta>{
     return this.http.get<Respuesta>(this.urlAPI);
   }
 
   //GETBYID
-  getCategoriaById(id:number):Observable<Respuesta>{
+  getClienteById(id:number):Observable<Respuesta>{
     return this.http.get<Respuesta>(this.urlAPI+'/'+id);
   }
 
   //POST
-  createCategoria(categoria:object):Observable<Respuesta>{
+  createCliente(categoria:object):Observable<Respuesta>{
     return this.http.post<Respuesta>(this.urlAPI, categoria);
   }
   //PUT
-  updateCategoria():void{
+  updateCliente():void{
 
   }
   //DELETE
-  deleteCategoria(id:number):Observable<Respuesta>{
+  deleteCliente(id:number):Observable<Respuesta>{
     return this.http.get<Respuesta>(this.urlAPI);
   }
 }

@@ -143,21 +143,11 @@
                         </tr>
                       </thead>
                       <tbody>
-                        <tr>
-                          <td>1</td>
-                          <td>Ana Rebolloso</td>
-                          <td>Callejón del Moro #106 B</td>
-                          <td>4921510613</td>
-                          <td>
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditarCliente">Editar</button>&nbsp;
-                            <button type="button" class="btn btn-danger" >Eliminar</button>
-                          </td>
-                        </tr>
-                        <tr>
-                          <td>2</td>
-                          <td>Gerardo Rebolloso</td>
-                          <td>Callejón del Moro #106 B</td>
-                          <td>4921510613</td>
+                        <tr *ngFor="let cliente of clientes">
+                          <td>{{ cliente.id }}</td>
+                          <td>{{ cliente.nombre }}</td>
+                          <td>{{ cliente.direccion }}</td>
+                          <td>{{ cliente.contacto }}</td>
                           <td>
                             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEditarCliente">Editar</button>&nbsp;
                             <button type="button" class="btn btn-danger" >Eliminar</button>
